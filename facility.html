@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script stc="main.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      (() => {
+        let app = document.getElementById("app");
+        app.textContent = "Loading...";
+        getJson("building_data").then(data => {
+          app.textContent = JSON.stringify(data);
+        });
+      })();
+    </script>
+  </body>
+</html>
