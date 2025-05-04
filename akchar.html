@@ -1,16 +1,16 @@
-<div id="app"></div>
-<script>
-  async function getJson(endpoint) {
-    let url = `https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/refs/heads/main/en_US/gamedata/excel/${endpoint}.json`;
-    let resp = await fetch(url);
-    let data = await resp.json();
-    return data;
-  }
-  (() => {
-    getJson("character_table")
-    .then(data=>{
-      let app = document.getElementById("app");
-      app.textContent = JSON.stringify(data);
-    });
-  })();
-</script>
+<html>
+  <head>
+    <script stc="main.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      (() => {
+        let app = document.getElementById("app");
+        getJson("character_table").then(data => {
+          app.textContent = JSON.stringify(data);
+        });
+      })();
+    </script>
+  </body>
+</html>
