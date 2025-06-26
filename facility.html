@@ -1,17 +1,32 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <script stc="main.js"></script>
+    <meta charset="UTF-8">
+    <link href="main.css" rel="stylesheet" />
+    <script src="main.js"></script>
+    <link href="facility.css" rel="stylesheet" />
+    <link href="prism.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preload" href="https://arknights.wiki.gg/images/c/cb/Control_Center.png?66da35" as="image" type="image/png" />
+    <link rel="preload" href="https://arknights.wiki.gg/images/0/0c/Dormitory.png?ed5d7a" as="image" type="image/png" />
+    <link rel="preload" href="https://arknights.wiki.gg/images/a/a3/Factory.png?b52bea" as="image" type="image/png" />
+    <link rel="preload" href="https://arknights.wiki.gg/images/7/78/Office.png?eeef3d" as="image" type="image/png" />
+    <link rel="preload" href="https://arknights.wiki.gg/images/7/7c/Power_Plant.png?ce74b4" as="image" type="image/png" />
+    <link rel="preload" href="https://arknights.wiki.gg/images/c/c2/Reception_Room.png?de1de1" as="image" type="image/png" />
+    <link rel="preload" href="https://arknights.wiki.gg/images/c/cc/Trading_Post.png?b92dfc" as="image" type="image/png" />
+    <link rel="preload" href="https://arknights.wiki.gg/images/d/d1/Training_Room.png?744fa7" as="image" type="image/png" />
+    <link rel="preload" href="https://arknights.wiki.gg/images/4/49/Workshop.png?6e6fb7" as="image" type="image/png" />
+    <title>facilities - @bryghtshadow</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script>
-      (() => {
-        let app = document.getElementById("app");
-        app.textContent = "Loading...";
-        getJson("building_data").then(data => {
-          app.textContent = JSON.stringify(data);
-        });
-      })();
-    </script>
+    <nav>
+      <ul class="hlist">
+        <li><a href="/">Home</a></li>
+        <li><a href="/facility.html">Facility</a></li>
+        <li><a href="/akchar.html">character_table</a></li>
+      </ul>
+    </nav>
+    <main id="app"></main>
+    <script src="facility.js"></script>
   </body>
 </html>

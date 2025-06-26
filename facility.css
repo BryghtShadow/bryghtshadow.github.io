@@ -1,0 +1,123 @@
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  height: 100%;
+  /* max-width: 70ch; */
+}
+
+.tabs label {
+  background: var(--primary-bg-color);
+  color: var(--secondary-text-color);
+  cursor: pointer;
+  display: block;
+  font-weight: 600;
+  margin-right: 0.3rem;
+  order: initial;
+  padding: 1em;
+  transition: background ease 0.3s;
+  width: 100%;
+  height: 3em;
+}
+
+.tabs .tab-content {
+  background: var(--secondary-bg-color);
+  display: none;
+  flex-grow: 1;
+  padding: 1rem;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.tabs input[type=radio] {
+  display: none;
+}
+
+.tabs input[type=radio]:checked + label {
+  background: var(--secondary-bg-color);
+  color: var(--primary-text-color);
+}
+
+.tabs input[type=radio]:checked + label + .tab-content {
+  display: block;
+}
+
+@media (min-width: 10em) {
+  .tabs .tab-content {
+    order: 99;
+  }
+
+  .tabs label {
+    order: 1;
+  }
+
+  .tabs label {
+    margin-right: 0.3rem;
+    margin-top: 0;
+    width: auto;
+  }
+}
+
+.tabs label {
+  display: flex;
+  align-items: center;
+}
+.tabs label::before {
+  content: '';
+  width: 23px;
+  height: 23px;
+  display: inline-block;
+}
+#control + label:before { background: url("https://arknights.wiki.gg/images/c/cb/Control_Center.png?66da35") }
+#dormitory + label:before { background: url("https://arknights.wiki.gg/images/0/0c/Dormitory.png?ed5d7a") }
+#manufacture + label:before { background: url("https://arknights.wiki.gg/images/a/a3/Factory.png?b52bea") }
+#hire + label:before { background: url("https://arknights.wiki.gg/images/7/78/Office.png?eeef3d") }
+#power + label:before { background: url("https://arknights.wiki.gg/images/7/7c/Power_Plant.png?ce74b4") }
+#meeting + label:before { background: url("https://arknights.wiki.gg/images/c/c2/Reception_Room.png?de1de1") }
+#trading + label:before { background: url("https://arknights.wiki.gg/images/c/cc/Trading_Post.png?b92dfc") }
+#training + label:before { background: url("https://arknights.wiki.gg/images/d/d1/Training_Room.png?744fa7") }
+#workshop + label:before { background: url("https://arknights.wiki.gg/images/4/49/Workshop.png?6e6fb7") }
+
+.template-argument-name,
+.template-delimiter {
+  color: #af84e6;
+}
+.template-argument-value {
+  color: #fff;
+}
+.tabs .tab-content {
+  background-color: #101418;
+}
+
+.line {
+  white-space: pre-wrap;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header {
+  display: flex;
+  /* justify-content: space-between; */
+  color: #eee;
+  border-bottom: thin solid silver;
+  margin-bottom: 0.5em;
+}
+.material-icons.done:after { content: 'done'; }
+.material-icons.content_copy::after { content: 'content_copy'; }
+
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+
+.tab-content code {
+  overflow-y: scroll;
+  height: calc(100vh - 10em);
+  display: block;
+}
