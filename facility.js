@@ -169,7 +169,6 @@
             let base = obj.facility;
             let page = document.querySelector(`#${base}-content code`);
             let ids = objs.map(o => o.buffId).join(', ');
-            obj.facility = FACILITY[obj.facility].name;
             obj.desc = parseDesc(obj.desc);
             let params = { id: ids, ...obj };
 
