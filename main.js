@@ -1,3 +1,24 @@
+(() => {
+  let hlist = [
+      { href: '/', text: 'Home' },
+      { href: '/facility.html', text: 'Facility' },
+      { href: '/operator.html', text: 'Operator' },
+      { href: '/akchar.html', text: 'character_table' },
+  ];
+  let nav = document.querySelector('nav');
+  let ul = document.createElement('ul');
+  ul.className = 'hlist';
+  for (var { href, text } of hlist) {
+      let li = document.createElement('li');
+      let a = document.createElement('a');
+      a.href = href;
+      a.textContent = text;
+      li.appendChild(a);
+      ul.appendChild(li);
+  }
+  nav.append(ul);
+})();
+
 async function getJson(filename) {
   let url = `https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/refs/heads/main/en_US/gamedata/excel/${filename}.json`
   let resp = await fetch(url)
