@@ -19,7 +19,10 @@
         let { charId } = char;
         let buffs = [];
         for (let buffChar of char.buffChar) {
-            for (let buff of buffChar.buffData) {
+            for (let [i, buff] of buffChar.buffData.entries()) {
+                if (i > 0) {
+                    buff.rpl = buffChar.buffData[i-1].buffId;
+                }
                 buffs.push(buff);
             }
         }
@@ -29,13 +32,16 @@
             return a.cond.level - b.cond.level;
         });
         let baseSkill = '{{Base skills'
-        for (let [i, { buffId: id, cond: { phase, level } }] of sortedBuffs.entries()) {
+        for (let [i, { buffId: id, cond: { phase, level }, rpl }] of sortedBuffs.entries()) {
             baseSkill += `\n|id${i + 1} = ${id}`;
             if (phase !== 'PHASE_0') {
                 baseSkill += `\n|cond${i + 1} = ${PHASES[phase]}`;
             }
             if (level > 1) {
                 baseSkill += `\n|level${i + 1} = ${level}`;
+            }
+            if (rpl) {
+                baseSkill += `\n|rpl${i + 1} = ${rpl}`;
             }
         }
         baseSkill += '\n}}\n';
