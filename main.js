@@ -19,8 +19,20 @@
   nav.append(ul);
 })();
 
-async function getJson(filename) {
-  let url = `https://raw.githubusercontent.com/Kengxxiao/ArknightsGameData_YoStar/refs/heads/main/en_US/gamedata/excel/${filename}.json`
+async function getJson(filename, lang) {
+  let repo = 'ArknightsGameData'
+  let code = 'zh_CN'
+  switch (lang) {
+    case 'cn': repo = 'ArknightsGameData'; break
+    default: repo = 'ArknightsGameData_YoStar'
+  }
+  switch (lang) {
+    case 'cn': code = 'zh_CN'; break
+    case 'en': code = 'en_US'; break
+    case 'jp': code = 'ja_JP'; break
+    case 'ko': code = 'ko_KR'; break
+  }
+  let url = `https://raw.githubusercontent.com/Kengxxiao/${repo}/refs/heads/main/${code}/gamedata/excel/${filename}.json`
   let resp = await fetch(url)
   let data = await resp.json()
   return data
